@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
           rel="stylesheet">
+
+    <script src="js/login.js" defer></script>
 </head>
 
 <body>
@@ -60,12 +62,9 @@
                 </div>
 
                 <!-- Formulario de inicio de sesión -->
-                <form
-                    class="formulario"
-                    action="../backend/login.php"
-                    method="POST"
-                >
-                    <div class="campo-formulario">
+                <form class="formulario" 
+                id="formulario-login">
+                    <div class="campo-formulario campo-error">
                         <label for="correo">Correo electrónico</label>
 
                         <input
@@ -75,7 +74,12 @@
                             placeholder="nombre@correo.com"
                             autocomplete="username"
                             required
+                            aria-describedby="error-correo"
                         >
+
+                        <p id="error-correo" class="mensaje-error" hidden>
+                            Ingresa un correo electrónico válido.
+                        </p>
                     </div>
 
                     <div class="campo-formulario">
@@ -101,6 +105,8 @@
                         <button type="submit" class="boton-acceso">
                             Iniciar sesión
                         </button>
+
+                        <p id="mensaje-login" class="mensaje-validacion" role="alert" hidden></p>
 
                         <p class="datos-pendientes">
                             Ingresa tu correo y contraseña registrados.
