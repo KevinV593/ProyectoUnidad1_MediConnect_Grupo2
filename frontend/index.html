@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar médicos | MediConnect</title>
+
+    <link rel="stylesheet" href="css/agendamiento.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <script src="js/agendamiento.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Menú lateral -->
+    <aside class="menu-lateral">
+
+        <a href="login.html" class="marca">
+            <span class="simbolo-salud">+</span>
+            <span>MediConnect</span>
+        </a>
+
+        <nav class="navegacion">
+            <a href="index.html" class="enlace-menu activo">
+                <span aria-hidden="true">⌕</span>
+                Buscar médicos
+            </a>
+
+            <a href="#" class="enlace-menu">
+                <span aria-hidden="true">▣</span>
+                Mis citas
+            </a>
+
+            <a href="#" class="enlace-menu">
+                <span aria-hidden="true">▤</span>
+                Historia clínica
+            </a>
+        </nav>
+
+        <div class="menu-inferior">
+            <a href="login.html" class="enlace-menu">
+                <span aria-hidden="true">↪</span>
+                Cerrar sesión
+            </a>
+        </div>
+
+    </aside>
+
+    <!-- Área principal -->
+    <main class="contenido">
+
+        <!-- Encabezado -->
+        <header class="encabezado-pagina">
+            <h1>Buscar médicos</h1>
+
+            <div class="perfil-paciente">
+                <span>Paciente</span>
+                <div class="avatar-paciente">P</div>
+            </div>
+        </header>
+
+        <section class="seccion-busqueda">
+
+            <div class="introduccion">
+                <h2>Encuentra al especialista adecuado</h2>
+                <p>
+                    Selecciona una especialidad para consultar los médicos disponibles.
+                </p>
+            </div>
+
+            <!-- Formulario de búsqueda -->
+                        
+            <section class="tarjeta-busqueda">
+                <h2>Agenda tu cita</h2>
+
+                <form id="formulario-busqueda">
+
+                                        
+                    <!-- Modalidad -->
+                    <div class="campo campo-modalidad">
+                        <label>Modalidad de atención</label>
+
+                        <div class="opciones-modalidad">
+                            <button
+                                type="button"
+                                class="boton-modalidad activo"
+                                data-modalidad="Presencial"
+                                aria-pressed="true">
+
+                                <span class="icono-modalidad" aria-hidden="true">🏥</span>
+
+                                <span class="texto-modalidad">
+                                    <strong>Presencial</strong>
+                                    <small>Atención en consultorio</small>
+                                </span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="boton-modalidad"
+                                data-modalidad="Virtual"
+                                aria-pressed="false">
+
+                                <span class="icono-modalidad" aria-hidden="true">💻</span>
+
+                                <span class="texto-modalidad">
+                                    <strong>Virtual</strong>
+                                    <small>Consulta por videollamada</small>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Especialidad -->
+                    <div class="campo">
+                        <label for="especialidad">Especialidad</label>
+
+                        <select id="especialidad" required>
+                            <option value="">Selecciona una especialidad</option>
+                            <option value="Pediatría">Pediatría</option>
+                            <option value="Cardiología">Cardiología</option>
+                            <option value="Dermatología">Dermatología</option>
+                            <option value="Medicina general">Medicina general</option>
+                            <option value="Neurología">Neurología</option>
+                        </select>
+                    </div>
+
+                    <p id="mensaje-validacion" class="mensaje-validacion"
+                    role="alert"></p>
+
+                    <button type="submit" class="boton-buscar">
+                        <span>⌕</span>
+                        Buscar médicos
+                    </button>
+                </form>
+            </section>
+
+            <!-- Resultados -->
+            <section class="seccion-resultados" aria-live="polite">
+                <div class="encabezado-resultados">
+                    <h3>Médicos disponibles</h3>
+                    <span id="cantidad-medicos">Selecciona una especialidad</span>
+                </div>
+
+                <div id="lista-medicos" class="lista-medicos"></div>
+
+                <div id="sin-resultados" class="sin-resultados" hidden>
+                    <h3>No se encontraron médicos disponibles para esta especialidad</h3>
+                    <p>Intenta seleccionar otra especialidad para encontrar un médico.</p>
+                </div>
+
+                <p id="mensaje-inicial" class="mensaje-inicial">
+                    Selecciona la modalidad y especialidad para consultar los médicos.
+                </p>
+            </section>
+
+
+        </section>
+
+        <footer class="pie-pagina">
+            MediConnect · Atención médica más accesible
+        </footer>
+
+    </main>
+
+</body>
+</html>

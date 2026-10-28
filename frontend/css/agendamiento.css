@@ -1,0 +1,1149 @@
+
+/* ========================================
+   ESTILOS GENERALES
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    background: #F8F9FA;
+    color: #111827;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ========================================
+   MENÚ LATERAL
+======================================== */
+
+.menu-lateral {
+    width: 240px;
+    min-height: 100vh;
+    padding: 32px 12px 16px;
+    background: #004B87;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px 32px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.simbolo-salud {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #FFFFFF;
+    color: #004B87;
+    font-size: 26px;
+}
+
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 24px;
+}
+
+.enlace-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.enlace-menu span {
+    width: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.enlace-menu:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.enlace-menu.activo {
+    background: #FFFFFF;
+    color: #004B87;
+    font-weight: 600;
+}
+
+.menu-inferior {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+======================================== */
+
+.contenido {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado-pagina {
+    min-height: 72px;
+    padding: 0 48px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.encabezado-pagina h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.perfil-paciente {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #4B5563;
+    font-size: 14px;
+}
+
+.avatar-paciente {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E2E8F0;
+    color: #004B87;
+    font-weight: 600;
+}
+
+/* ========================================
+   FORMULARIO DE BÚSQUEDA
+======================================== */
+
+.seccion-busqueda {
+    width: 100%;
+    max-width: 952px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.introduccion {
+    margin-bottom: 24px;
+}
+
+.introduccion h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.introduccion p {
+    margin: 0;
+    color: #4B5563;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.tarjeta-busqueda {
+    padding: 28px 32px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+}
+
+.tarjeta-busqueda h2 {
+    margin: 0 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E5E7EB;
+    font-size: 20px;
+}
+
+#formulario-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.campo select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    color: #111827;
+    font: inherit;
+    font-size: 14px;
+}
+
+.campo select:focus {
+    outline: 2px solid rgba(0, 75, 135, 0.2);
+    border-color: #004B87;
+}
+
+.boton-buscar {
+    min-height: 48px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #004B87;
+    color: #FFFFFF;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.boton-buscar:hover {
+    background: #003967;
+}
+
+.boton-buscar span {
+    margin-right: 8px;
+    font-size: 19px;
+}
+
+.mensaje-validacion {
+    margin: -10px 0 0;
+    color: #B91C1C;
+    font-size: 13px;
+}
+
+/* ========================================
+   RESULTADOS
+======================================== */
+
+.seccion-resultados {
+    margin-top: 32px;
+}
+
+.encabezado-resultados {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.encabezado-resultados h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+#cantidad-resultados {
+    color: #4B5563;
+    font-size: 13px;
+}
+
+.lista-medicos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.tarjeta-medico {
+    min-width: 0;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.foto-medico {
+    width: 76px;
+    height: 76px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #E2E8F0;
+}
+
+.datos-medico {
+    min-width: 0;
+}
+
+.datos-medico h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.especialidad-medico {
+    margin: 0 0 10px;
+    color: #4B5563;
+    font-size: 13px;
+}
+
+.calificacion {
+    margin: 0 0 12px;
+    color: #92400E;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.disponibilidad {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #DCFCE7;
+    color: #166534;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ========================================
+   ESTADOS SIN RESULTADOS E INICIAL
+======================================== */
+
+.sin-resultados,
+.estado-inicial {
+    padding: 32px 20px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.icono-sin-resultados {
+    margin-bottom: 12px;
+    color: #004B87;
+    font-size: 36px;
+}
+
+.sin-resultados h3 {
+    margin: 0 auto 10px;
+    max-width: 500px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.sin-resultados p,
+.estado-inicial p {
+    margin: 0;
+    color: #4B5563;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ========================================
+   PIE DE PÁGINA
+======================================== */
+
+.pie-pagina {
+    margin-top: auto;
+    padding: 24px;
+    color: #6B7280;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* ========================================
+   DISEÑO RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+    .menu-lateral {
+        width: 210px;
+    }
+
+    .encabezado-pagina {
+        padding: 0 24px;
+    }
+
+    .lista-medicos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        flex-direction: column;
+    }
+
+    .menu-lateral {
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+    }
+
+    .marca {
+        padding: 0 0 16px;
+    }
+
+    .navegacion {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-top: 12px;
+    }
+
+    .enlace-menu {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .menu-inferior {
+        display: none;
+    }
+
+    .encabezado-pagina {
+        min-height: 64px;
+        padding: 0 16px;
+    }
+
+    .seccion-busqueda {
+        padding: 24px 16px;
+    }
+
+    .introduccion h2 {
+        font-size: 21px;
+    }
+
+    .tarjeta-busqueda {
+        padding: 22px 18px;
+    }
+
+    .tarjeta-medico {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .foto-medico {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+/* Tarjeta de agendamiento */
+.tarjeta-busqueda {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 760px;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+}
+
+.tarjeta-busqueda h2 {
+    margin: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E5E7EB;
+    color: #111827;
+    font-size: 20px;
+}
+
+/* Formulario */
+#formulario-busqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Botones de modalidad */
+.opciones-modalidad {
+    display: flex;
+    gap: 16px;
+}
+
+.boton-modalidad {
+    flex: 1;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #FFFFFF;
+    border: 2px solid #D1D5DB;
+    border-radius: 8px;
+    color: #111827;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.boton-modalidad.activo {
+    background: #F0F6FA;
+    border-color: #004B87;
+    color: #004B87;
+    font-weight: 600;
+}
+
+.boton-modalidad:focus-visible,
+.boton-buscar:focus-visible,
+.boton-agendar:focus-visible {
+    outline: 3px solid #93C5FD;
+    outline-offset: 2px;
+}
+
+/* Selector de especialidad */
+.campo select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+    padding: 0 14px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+    color: #111827;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+/* Botón buscar */
+.boton-buscar {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background: #004B87;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.boton-buscar:hover,
+.boton-agendar:hover {
+    background: #003966;
+}
+
+.mensaje-validacion {
+    margin: -10px 0 0;
+    color: #B91C1C;
+    font-size: 14px;
+}
+
+/* Resultados */
+.seccion-resultados {
+    width: 100%;
+    max-width: 760px;
+    margin-top: 24px;
+}
+
+.encabezado-resultados {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.encabezado-resultados h3 {
+    margin: 0;
+    color: #111827;
+    font-size: 16px;
+}
+
+#cantidad-medicos {
+    color: #4B5563;
+    font-size: 13px;
+}
+
+.lista-medicos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta-medico {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 79px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+}
+
+.datos-medico {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.nombre-medico {
+    margin: 0;
+    color: #111827;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.especialidad-medico {
+    margin: 0;
+    color: #4B5563;
+    font-size: 14px;
+}
+
+.disponibilidad {
+    display: inline-block;
+    width: fit-content;
+    padding: 3px 8px;
+    background: #D1FAE5;
+    border-radius: 4px;
+    color: #166534;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.boton-agendar {
+    flex-shrink: 0;
+    min-height: 40px;
+    padding: 0 20px;
+    background: #004B87;
+    border: none;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.sin-resultados,
+.mensaje-inicial {
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    color: #4B5563;
+    text-align: center;
+}
+
+.sin-resultados h3 {
+    margin-top: 0;
+    color: #111827;
+    font-size: 16px;
+}
+
+.sin-resultados p {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+    .tarjeta-busqueda {
+        padding: 22px 18px;
+    }
+
+    .opciones-modalidad {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tarjeta-medico {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px;
+    }
+
+    .boton-agendar {
+        width: 100%;
+    }
+
+    .encabezado-resultados {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* ========================================
+   AJUSTE GENERAL DE LA PÁGINA
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background: #F8F9FA;
+    color: #111827;
+}
+
+.contenido {
+    min-width: 0;
+    flex: 1;
+}
+
+.seccion-busqueda {
+    width: 100%;
+    padding: 32px 48px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introduccion {
+    width: 100%;
+    max-width: 760px;
+    margin-bottom: 24px;
+}
+
+.introduccion h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.introduccion p {
+    margin: 0;
+    color: #4B5563;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* ========================================
+   TARJETA DE AGENDAMIENTO
+======================================== */
+
+.tarjeta-busqueda {
+    width: 100%;
+    max-width: 760px;
+    padding: 30px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(17, 24, 39, 0.04);
+}
+
+.tarjeta-busqueda > h2 {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E5E7EB;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+#formulario-busqueda {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.campo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.campo > label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* ========================================
+   BOTONES GRANDES DE MODALIDAD
+======================================== */
+
+.opciones-modalidad {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+}
+
+.boton-modalidad {
+    flex: 1;
+    min-width: 0;
+    min-height: 76px;
+    padding: 14px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+
+    background: #FFFFFF;
+    border: 2px solid #D1D5DB;
+    border-radius: 10px;
+
+    color: #374151;
+    font-family: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.boton-modalidad:hover {
+    border-color: #6697BC;
+    background: #F8FBFE;
+}
+
+.boton-modalidad.activo {
+    background: #F0F6FA;
+    border-color: #004B87;
+    color: #004B87;
+    box-shadow: 0 0 0 2px rgba(0, 75, 135, 0.06);
+}
+
+.icono-modalidad {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #F3F4F6;
+    border-radius: 9px;
+    font-size: 23px;
+}
+
+.boton-modalidad.activo .icono-modalidad {
+    background: #FFFFFF;
+}
+
+.texto-modalidad {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.texto-modalidad strong {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.texto-modalidad small {
+    color: #6B7280;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.boton-modalidad.activo .texto-modalidad small {
+    color: #4B5563;
+}
+
+.boton-modalidad:focus-visible {
+    outline: 3px solid #93C5FD;
+    outline-offset: 3px;
+}
+
+/* ========================================
+   SELECTOR DE ESPECIALIDAD
+======================================== */
+
+.campo select {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 16px;
+
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 8px;
+
+    color: #111827;
+    font-family: inherit;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.campo select:focus {
+    outline: 2px solid #93C5FD;
+    border-color: #004B87;
+}
+
+/* ========================================
+   BOTÓN BUSCAR
+======================================== */
+
+.boton-buscar {
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    background: #004B87;
+    border: none;
+    border-radius: 9px;
+
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.boton-buscar:hover {
+    background: #003966;
+}
+
+.boton-buscar span {
+    font-size: 21px;
+}
+
+.mensaje-validacion {
+    margin: -12px 0 0;
+    color: #B91C1C;
+    font-size: 14px;
+}
+
+/* ========================================
+   RESULTADOS DE BÚSQUEDA
+======================================== */
+
+.seccion-resultados {
+    width: 100%;
+    max-width: 760px;
+    margin-top: 28px;
+}
+
+.encabezado-resultados {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.encabezado-resultados h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+#cantidad-medicos {
+    color: #4B5563;
+    font-size: 13px;
+}
+
+.lista-medicos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tarjeta-medico {
+    width: 100%;
+    min-height: 92px;
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+}
+
+.datos-medico {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nombre-medico {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.especialidad-medico {
+    margin: 0;
+    color: #4B5563;
+    font-size: 14px;
+}
+
+.disponibilidad {
+    width: fit-content;
+    padding: 4px 9px;
+    background: #DCFCE7;
+    border-radius: 5px;
+    color: #166534;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.boton-agendar {
+    min-height: 42px;
+    padding: 0 20px;
+    flex-shrink: 0;
+
+    background: #004B87;
+    border: none;
+    border-radius: 8px;
+
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.boton-agendar:hover {
+    background: #003966;
+}
+
+.sin-resultados,
+.mensaje-inicial {
+    padding: 24px;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    color: #4B5563;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.sin-resultados h3 {
+    color: #111827;
+    font-size: 16px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+    .seccion-busqueda {
+        padding: 24px;
+    }
+
+    .tarjeta-busqueda {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .seccion-busqueda {
+        padding: 20px 14px;
+    }
+
+    .introduccion h2 {
+        font-size: 21px;
+    }
+
+    .tarjeta-busqueda {
+        padding: 22px 18px;
+    }
+
+    .opciones-modalidad {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .boton-modalidad {
+        width: 100%;
+        min-height: 76px;
+    }
+
+    .tarjeta-medico {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .boton-agendar {
+        width: 100%;
+    }
+
+    .encabezado-resultados {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
