@@ -23,9 +23,12 @@ para el caso de estudio asignado en la Unidad 1.
 
 ## Herramientas del proyecto
 
-- Jira: [enlace al proyecto]
-- Confluence: [enlace al SRS]
-- Figma: [enlace al prototipo]
+- Jira: [https://edwin-guachi-espe.atlassian.net/?continue=https%3A%2F%2Fedwin-guachi-e
+spe.atlassian.net%2Fwelcome%2Fsoftware%3FprojectId%3D10135&atlOrigin=eyJpIj
+oiYTQ4MWZmZGViMGVjNDgzOWIwNmE5NjNhYmI5ODlmMDgiLCJwIjoiamlyYS1zb
+2Z0d2FyZSJ9]
+- Confluence: [https://edwin-guachi-espe.atlassian.net/wiki/x/AQAD]
+- Figma: [https://www.figma.com/design/iJaLzE4hNM5ypOWaofccxm/Sin-t%C3%ADtulo?nodeid=0-1&p=f&t=wu0MEEEoGC0gE6Nf-0]
 - GitHub Actions: integración continua.
 
 ## Ejecución
