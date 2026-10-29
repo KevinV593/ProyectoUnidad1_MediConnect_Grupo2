@@ -8,53 +8,48 @@
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    background: #F8F9FA;
-    font-family: 'Inter', Arial, sans-serif;
-    color: #111827;
-
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background: #F8F9FA;
+    color: #111827;
+    font-family: 'Inter', Arial, sans-serif;
 }
 
 /* ========================================
-   BARRA SUPERIOR
+   BARRA SUPERIOR Y MARCA
 ======================================== */
 
 .barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     min-height: 80px;
     padding: 0 64px;
     background: #004B87;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .marca {
     display: flex;
     align-items: center;
     gap: 10px;
-
     color: #FFFFFF;
-    text-decoration: none;
     font-size: 22px;
     font-weight: 700;
+    text-decoration: none;
 }
 
 .simbolo-salud {
-    width: 28px;
-    height: 28px;
-    background: #FFFFFF;
-    color: #004B87;
-    border-radius: 4px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    background: #FFFFFF;
+    color: #004B87;
     font-size: 25px;
     font-weight: 700;
 }
@@ -63,10 +58,9 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-
     color: #FFFFFF;
-    text-decoration: none;
     font-size: 14px;
+    text-decoration: none;
 }
 
 .enlace-ayuda:hover {
@@ -78,14 +72,42 @@ body {
 ======================================== */
 
 .contenido-principal {
-    flex: 1;
-    width: 100%;
-    padding: 40px 24px;
-
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    padding: 40px 24px;
+}
+
+.contenedor-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1120px;
+}
+
+/* ========================================
+   IMAGEN DE BIENVENIDA
+======================================== */
+
+.imagen-login {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+
+.imagen-login img {
+    display: block;
+    width: 100%;
+    max-width: 503px;
+    height: auto;
+    object-fit: contain;
 }
 
 /* ========================================
@@ -93,21 +115,25 @@ body {
 ======================================== */
 
 .tarjeta-acceso {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     width: 100%;
     max-width: 480px;
     padding: 40px;
-
     background: #FFFFFF;
     border: 1px solid #E5E7EB;
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
 }
 
-/* Título y descripción */
+.contenedor-login .tarjeta-acceso {
+    flex: 0 1 480px;
+}
+
+/* ========================================
+   PRESENTACIÓN Y ENCABEZADO
+======================================== */
 
 .presentacion {
     display: flex;
@@ -117,15 +143,13 @@ body {
 }
 
 .icono-seguridad {
-    width: 44px;
-    height: 44px;
-    background: #EDF4FA;
-    border-radius: 8px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #EDF4FA;
     font-size: 22px;
 }
 
@@ -152,17 +176,18 @@ body {
 ======================================== */
 
 .formulario {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
 .campo-formulario {
-    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    align-items: flex-start;
+    gap: 5.5px;
+    width: 100%;
 }
 
 .campo-formulario label {
@@ -176,15 +201,12 @@ body {
     width: 100%;
     height: 48px;
     padding: 0 16px;
-
     background: #FFFFFF;
     border: 1px solid #D1D5DB;
     border-radius: 8px;
-
+    color: #111827;
     font-family: inherit;
     font-size: 14px;
-    color: #111827;
-
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
@@ -198,7 +220,12 @@ body {
     box-shadow: 0 0 0 3px rgba(0, 75, 135, 0.12);
 }
 
-/* Recuperar contraseña */
+.campo-error input {
+    border: 1px solid #dc2626;
+}
+/* ========================================
+   RECUPERACIÓN DE CONTRASEÑA
+======================================== */
 
 .recuperar-contrasena {
     margin-top: -8px;
@@ -208,9 +235,9 @@ body {
 .recuperar-contrasena a,
 .registro a {
     color: #004B87;
-    text-decoration: none;
     font-size: 14px;
     font-weight: 600;
+    text-decoration: none;
 }
 
 .recuperar-contrasena a:hover,
@@ -218,7 +245,9 @@ body {
     text-decoration: underline;
 }
 
-/* Botón */
+/* ========================================
+   BOTÓN DE ACCESO
+======================================== */
 
 .accion-acceso {
     width: 100%;
@@ -228,17 +257,14 @@ body {
     width: 100%;
     min-height: 48px;
     padding: 12px;
-
     background: #004B87;
-    color: #FFFFFF;
     border: none;
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-
+    color: #FFFFFF;
     font-family: inherit;
     font-size: 16px;
     font-weight: 600;
-
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -255,28 +281,25 @@ body {
 .datos-pendientes {
     margin: 8px 0 0;
     color: #6B7280;
-    text-align: center;
     font-size: 12px;
     line-height: 18px;
+    text-align: center;
 }
 
 /* ========================================
-   ESTADO DE ERROR
+   ESTADOS DE ERROR
+   Se conservan para su uso actual o futuro
 ======================================== */
 
-/* Alerta roja de credenciales incorrectas */
-
 .alerta-error {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     width: 100%;
     padding: 16px;
     background: #FEF2F2;
     border: 1px solid #B91C1C;
     border-radius: 8px;
-
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
     color: #B91C1C;
     font-size: 14px;
     font-weight: 500;
@@ -284,21 +307,17 @@ body {
 }
 
 .icono-error {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-
     display: flex;
+    flex-shrink: 0;
     justify-content: center;
     align-items: center;
-
+    width: 20px;
+    height: 20px;
     border: 2px solid #B91C1C;
     border-radius: 50%;
     font-size: 13px;
     font-weight: 700;
 }
-
-/* Campos con credenciales incorrectas */
 
 .campo-formulario input.invalido {
     border-color: #B91C1C;
@@ -309,14 +328,14 @@ body {
     box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
 }
 
-/* Mensaje debajo del correo */
-
 .mensaje-error {
     margin: 0;
-    color: #B91C1C;
+    color: #dc2626;
     font-size: 12px;
-    font-weight: 500;
-    line-height: 16px;
+}
+
+.mensaje-error[hidden] {
+    display: none;
 }
 
 /* ========================================
@@ -347,7 +366,6 @@ body {
     align-items: center;
     gap: 8px;
     margin-top: 24px;
-
     color: #6B7280;
     font-size: 12px;
     text-align: center;
@@ -367,20 +385,20 @@ body {
 ======================================== */
 
 .pie-pagina {
-    width: 100%;
-    min-height: 68px;
-    padding: 16px 24px;
-
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
+    width: 100%;
+    min-height: 68px;
+    margin-top: auto;
+    padding: 16px 24px;
 }
 
 .pie-pagina a {
     color: #4B5563;
-    text-decoration: none;
     font-size: 13px;
+    text-decoration: none;
 }
 
 .pie-pagina a:hover {
@@ -410,8 +428,8 @@ body {
     }
 
     .tarjeta-acceso {
-        padding: 28px 22px;
         gap: 20px;
+        padding: 28px 22px;
     }
 
     .encabezado h1 {
@@ -423,8 +441,41 @@ body {
     }
 
     .pie-pagina {
-        gap: 18px;
         flex-wrap: wrap;
+        gap: 18px;
+    }
+}
+
+@media (max-width: 900px) {
+    .contenedor-login {
+        gap: 24px;
+    }
+
+    .imagen-login img {
+        max-width: 380px;
+    }
+
+    .contenedor-login .tarjeta-acceso {
+        flex-basis: 440px;
+        padding: 28px;
+    }
+}
+
+@media (max-width: 700px) {
+    .contenedor-login {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .imagen-login img {
+        max-width: 320px;
+        max-height: 240px;
+    }
+
+    .contenedor-login .tarjeta-acceso {
+        flex: initial;
+        max-width: 480px;
+        padding: 28px 22px;
     }
 }
 
@@ -445,80 +496,5 @@ body {
 
     .tarjeta-acceso {
         padding: 24px 16px;
-    }
-}
-
-/* ========================================
-   DISTRIBUCIÓN DE IMAGEN Y LOGIN
-======================================== */
-
-.contenedor-login {
-    width: 100%;
-    max-width: 1120px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 48px;
-}
-
-/* Imagen de bienvenida */
-
-.imagen-login {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.imagen-login img {
-    display: block;
-    width: 100%;
-    max-width: 503px;
-    height: auto;
-    object-fit: contain;
-}
-
-/* Tarjeta a la derecha */
-
-.contenedor-login .tarjeta-acceso {
-    flex: 0 1 480px;
-    width: 100%;
-}
-
-/* Ajustes para pantallas medianas */
-
-@media (max-width: 900px) {
-    .contenedor-login {
-        gap: 24px;
-    }
-
-    .imagen-login img {
-        max-width: 380px;
-    }
-
-    .contenedor-login .tarjeta-acceso {
-        flex-basis: 440px;
-        padding: 28px;
-    }
-}
-
-/* Ajustes para móviles */
-
-@media (max-width: 700px) {
-    .contenedor-login {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    .imagen-login img {
-        max-width: 320px;
-        max-height: 240px;
-    }
-
-    .contenedor-login .tarjeta-acceso {
-        flex: initial;
-        max-width: 480px;
-        padding: 28px 22px;
     }
 }
