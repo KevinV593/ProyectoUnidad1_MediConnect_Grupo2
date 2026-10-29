@@ -140,51 +140,31 @@ formulario.addEventListener("submit", function (evento) {
 
     // Crear una tarjeta por cada médico encontrado.
     resultados.forEach(function (medico) {
-
         const tarjeta = document.createElement("article");
-        tarjeta.className = "tarjeta-medico";
-
-        const foto = document.createElement("img");
-        foto.className = "foto-medico";
-        foto.src = medico.foto;
-        foto.alt = "Foto de " + medico.nombre;
-        foto.loading = "lazy";
-
-        foto.addEventListener("error", function () {
-            foto.removeAttribute("src");
-            foto.alt = "Foto no disponible";
-        });
+        tarjeta.classList.add("tarjeta-medico");
 
         const datos = document.createElement("div");
-        datos.className = "datos-medico";
+        datos.classList.add("datos-medico");
 
         const nombre = document.createElement("h3");
         nombre.textContent = medico.nombre;
 
         const especialidad = document.createElement("p");
-        especialidad.className = "especialidad-medico";
+        especialidad.classList.add("especialidad-medico");
         especialidad.textContent = medico.especialidad;
 
-        const calificacion = document.createElement("p");
-        calificacion.className = "calificacion";
-        calificacion.textContent =
-            "★ " + medico.calificacion.toFixed(1) + " / 5.0";
+        datos.appendChild(nombre);
+        datos.appendChild(especialidad);
 
-        const disponibilidad = document.createElement("span");
-        disponibilidad.className = "disponibilidad";
-        disponibilidad.textContent =
-            "Modalidad: " + modalidadSeleccionada;
+        const botonHorario = document.createElement("button");
+        botonHorario.type = "button";
+        botonHorario.classList.add("boton-horario");
+        botonHorario.textContent = "Ver horario";
 
-        datos.append(
-            nombre,
-            especialidad,
-            calificacion,
-            disponibilidad
-        );
+        tarjeta.appendChild(datos);
+        tarjeta.appendChild(botonHorario);
 
-        tarjeta.append(foto, datos);
         listaMedicos.appendChild(tarjeta);
-
     });
 
 });
