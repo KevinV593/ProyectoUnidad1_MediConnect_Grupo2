@@ -1,0 +1,690 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Prototipo académico MediConnect para reprogramar una cita médica."
+    >
+
+    <title>Reprogramación de citas | MediConnect</title>
+
+    <!-- Hoja de estilos exclusiva de esta funcionalidad -->
+    <link rel="stylesheet" href="css/reprogramacion.css">
+
+    <!-- Fuente de la interfaz -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- JavaScript externo -->
+    <script src="js/reprogramacion.js" defer></script>
+</head>
+
+<body>
+    <!-- Encabezado general -->
+    <header class="encabezado">
+        <div class="contenedor encabezado-contenido">
+            <a class="marca" href="reprogramacion.html" aria-label="MediConnect, inicio">
+                <span class="marca-icono" aria-hidden="true">+</span>
+                <span class="marca-texto">MediConnect</span>
+            </a>
+
+            <span class="etiqueta-prototipo">
+                Prototipo académico
+            </span>
+        </div>
+    </header>
+
+    <main class="contenedor contenido-principal">
+
+        <!-- ==================================================
+             PANTALLA 1: NOTIFICACIÓN DE CITA CANCELADA
+        =================================================== -->
+        <section
+            id="pantalla-notificacion"
+            class="pantalla pantalla-notificacion"
+            aria-labelledby="titulo-notificacion"
+        >
+            <nav class="migas-pan"
+                aria-label="Ruta de navegación">
+                <span>Inicio</span>
+                <span aria-hidden="true">/</span>
+                <span>Mis citas</span>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Reprogramación</span>
+            </nav>
+
+            <div class="alerta-emergencia" role="status">
+                <span class="alerta-icono" aria-hidden="true">!</span>
+
+                <div class="alerta-contenido">
+                    <h1 id="titulo-notificacion">
+                        Tu cita necesita reprogramarse
+                    </h1>
+
+                    <p>
+                        El Dr. Alejandro Ramos registró una emergencia.
+                        Se habilitaron horarios prioritarios para que puedas
+                        continuar con tu seguimiento sin demoras.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Información del médico -->
+            <article class="tarjeta tarjeta-medico">
+                <div class="avatar-medico" aria-hidden="true">
+                    AR
+                </div>
+
+                <div class="informacion-medico">
+                    <span class="texto-secundario">
+                        Especialista asignado
+                    </span>
+
+                    <h2>Dr. Alejandro Ramos</h2>
+
+                    <p>
+                        Cardiología preventiva y clínica
+                    </p>
+
+                    <div class="datos-medico">
+                        <span>
+                            <span aria-hidden="true">⌖</span>
+                            Consultorio 304
+                        </span>
+
+                        <span>
+                            <span aria-hidden="true">⌂</span>
+                            Sede Central, piso 3
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Resumen de la cita original -->
+            <article class="tarjeta tarjeta-cita-original">
+                <div class="titulo-tarjeta">
+                    <div>
+                        <span class="texto-secundario">
+                            Cita original
+                        </span>
+
+                        <h2>Detalles de tu cita</h2>
+                    </div>
+
+                    <span class="estado-cancelada">
+                        Cancelada
+                    </span>
+                </div>
+
+                <div class="detalles-cita">
+                    <div class="detalle-item">
+                        <span class="detalle-icono" aria-hidden="true">
+                            ▦
+                        </span>
+
+                        <div>
+                            <span class="detalle-etiqueta">Fecha</span>
+                            <p>Lunes, 12 de octubre</p>
+                        </div>
+                    </div>
+
+                    <div class="detalle-item">
+                        <span class="detalle-icono" aria-hidden="true">
+                            ◷
+                        </span>
+
+                        <div>
+                            <span class="detalle-etiqueta">Hora</span>
+                            <p>10:00 AM</p>
+                        </div>
+                    </div>
+
+                    <div class="detalle-item">
+                        <span class="detalle-icono" aria-hidden="true">
+                            ♧
+                        </span>
+
+                        <div>
+                            <span class="detalle-etiqueta">Modalidad</span>
+                            <p>Consulta presencial</p>
+                        </div>
+                    </div>
+
+                    <div class="detalle-item">
+                        <span class="detalle-icono" aria-hidden="true">
+                            ⌖
+                        </span>
+
+                        <div>
+                            <span class="detalle-etiqueta">Consultorio</span>
+                            <p>304</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Motivo de la cancelación -->
+            <article class="tarjeta tarjeta-motivo">
+                <div class="motivo-encabezado">
+                    <span class="motivo-icono" aria-hidden="true">!</span>
+
+                    <div>
+                        <h2>Motivo de reprogramación</h2>
+                        <p>
+                            Se ha registrado una situación de emergencia
+                            que impide realizar la consulta en el horario original.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="motivo-detalles">
+                    <span class="etiqueta-motivo">Emergencia</span>
+
+                    <span class="codigo-administrativo">
+                        Código: EM-URG-724
+                    </span>
+                </div>
+            </article>
+
+            <!-- Aviso de prioridad -->
+            <aside class="aviso-prioridad">
+                <span class="prioridad-icono" aria-hidden="true">✓</span>
+
+                <p>
+                    <strong>Atención prioritaria.</strong>
+                    Puedes elegir otro horario disponible para reprogramar
+                    tu cita.
+                </p>
+            </aside>
+
+            <!-- Acciones de la primera pantalla -->
+            <div class="acciones-notificacion">
+                <button
+                    type="button"
+                    id="btn-ver-citas"
+                    class="boton boton-secundario"
+                >
+                    Ver mis citas
+                </button>
+
+                <button
+                    type="button"
+                    id="btn-elegir-horario"
+                    class="boton boton-principal"
+                >
+                    Elegir nuevo horario
+                    <span aria-hidden="true">→</span>
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ==================================================
+             PANTALLA 2: SELECCIÓN DE FECHA Y HORARIO
+        =================================================== -->
+        <section
+            id="pantalla-horarios"
+            class="pantalla pantalla-horarios"
+            aria-labelledby="titulo-horarios"
+            hidden
+        >
+            <nav class="migas-pan" aria-label="Ruta de navegación">
+                <button
+                    type="button"
+                    id="btn-volver-notificacion"
+                    class="enlace-volver"
+                >
+                    <span aria-hidden="true">←</span>
+                    Volver a la notificación
+                </button>
+
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Seleccionar horario</span>
+            </nav>
+
+            <div class="encabezado-horarios">
+                <div>
+                    <span class="etiqueta-seccion">
+                        REPROGRAMACIÓN DE CITA
+                    </span>
+
+                    <h1 id="titulo-horarios">
+                        Elige un nuevo horario
+                    </h1>
+
+                    <p>
+                        Selecciona una fecha y uno de los horarios
+                        disponibles para tu cita.
+                    </p>
+                </div>
+
+                <span class="etiqueta-prioridad">
+                    Atención prioritaria
+                </span>
+            </div>
+
+            <!-- Resumen compacto del especialista -->
+            <article class="tarjeta resumen-especialista">
+                <div class="avatar-medico avatar-pequeno" aria-hidden="true">
+                    AR
+                </div>
+
+                <div class="resumen-medico-texto">
+                    <h2>Dr. Alejandro Ramos</h2>
+
+                    <p>Cardiología preventiva y clínica</p>
+
+                    <span>Consultorio 304 · Sede Central, piso 3</span>
+                </div>
+
+                <span class="etiqueta-prioridad">
+                    Prioridad
+                </span>
+            </article>
+
+            <!-- Tarjeta de selección de fecha -->
+            <article class="tarjeta tarjeta-fechas">
+                <div class="encabezado-tarjeta">
+                    <div>
+                        <span class="texto-secundario">
+                            PASO 1
+                        </span>
+
+                        <h2>Selecciona una fecha</h2>
+
+                        <p>
+                            Elige el día que mejor se adapte a tu disponibilidad.
+                        </p>
+                    </div>
+
+                    <div class="selector-mes" aria-label="Mes seleccionado">
+                        <span aria-hidden="true">▦</span>
+                        Octubre 2025
+                    </div>
+                </div>
+
+                <div
+                    id="lista-fechas"
+                    class="lista-fechas"
+                    role="group"
+                    aria-label="Fechas disponibles"
+                >
+                    <button
+                        type="button"
+                        class="opcion-fecha"
+                        data-fecha="2025-10-13"
+                        aria-pressed="false"
+                    >
+                        <span class="dia-semana">LUN</span>
+                        <span class="dia-numero">13</span>
+                        <span class="mes-fecha">OCT</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-fecha"
+                        data-fecha="2025-10-14"
+                        aria-pressed="false"
+                    >
+                        <span class="dia-semana">MAR</span>
+                        <span class="dia-numero">14</span>
+                        <span class="mes-fecha">OCT</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-fecha"
+                        data-fecha="2025-10-15"
+                        aria-pressed="false"
+                    >
+                        <span class="dia-semana">MIÉ</span>
+                        <span class="dia-numero">15</span>
+                        <span class="mes-fecha">OCT</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-fecha"
+                        data-fecha="2025-10-16"
+                        aria-pressed="false"
+                    >
+                        <span class="dia-semana">JUE</span>
+                        <span class="dia-numero">16</span>
+                        <span class="mes-fecha">OCT</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-fecha"
+                        data-fecha="2025-10-17"
+                        aria-pressed="false"
+                    >
+                        <span class="dia-semana">VIE</span>
+                        <span class="dia-numero">17</span>
+                        <span class="mes-fecha">OCT</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-fecha"
+                        data-fecha="2025-10-18"
+                        aria-pressed="false"
+                    >
+                        <span class="dia-semana">SÁB</span>
+                        <span class="dia-numero">18</span>
+                        <span class="mes-fecha">OCT</span>
+                    </button>
+                </div>
+
+                <p class="ayuda-fechas">
+                    Las fechas corresponden a los horarios de demostración
+                    de este prototipo.
+                </p>
+            </article>
+
+            <!-- Tarjeta de selección de horario -->
+            <article class="tarjeta tarjeta-horas">
+                <div class="encabezado-tarjeta encabezado-horas">
+                    <div>
+                        <span class="texto-secundario">
+                            PASO 2
+                        </span>
+
+                        <h2>Selecciona un horario</h2>
+
+                        <p>
+                            Los horarios en verde están disponibles para reservar.
+                        </p>
+                    </div>
+
+                    <div class="leyenda-horarios" aria-label="Leyenda">
+                        <span class="leyenda-item">
+                            <span
+                                class="punto-leyenda punto-disponible"
+                                aria-hidden="true"
+                            ></span>
+                            Disponible
+                        </span>
+
+                        <span class="leyenda-item">
+                            <span
+                                class="punto-leyenda punto-no-disponible"
+                                aria-hidden="true"
+                            ></span>
+                            No disponible
+                        </span>
+                    </div>
+                </div>
+
+                <div class="separador"></div>
+
+                <p
+                    id="mensaje-seleccion"
+                    class="mensaje-seleccion"
+                    aria-live="polite"
+                >
+                    Selecciona una fecha para consultar los horarios disponibles.
+                </p>
+
+                <div
+                    id="lista-horarios"
+                    class="lista-horarios"
+                    role="group"
+                    aria-label="Horarios de la cita"
+                >
+                    <button
+                        type="button"
+                        class="opcion-hora disponible"
+                        data-hora="08:30 AM"
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="indicador-hora" aria-hidden="true"></span>
+                        08:30 AM
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-hora no-disponible"
+                        data-hora="09:15 AM"
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="indicador-hora" aria-hidden="true"></span>
+                        <s>09:15 AM</s>
+                        <span class="texto-ocupado">Ocupado</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-hora disponible"
+                        data-hora="10:00 AM"
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="indicador-hora" aria-hidden="true"></span>
+                        10:00 AM
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-hora no-disponible"
+                        data-hora="10:45 AM"
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="indicador-hora" aria-hidden="true"></span>
+                        <s>10:45 AM</s>
+                        <span class="texto-ocupado">Ocupado</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-hora disponible"
+                        data-hora="11:30 AM"
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="indicador-hora" aria-hidden="true"></span>
+                        11:30 AM
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-hora no-disponible"
+                        data-hora="12:15 PM"
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="indicador-hora" aria-hidden="true"></span>
+                        <s>12:15 PM</s>
+                        <span class="texto-ocupado">Ocupado</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-hora disponible"
+                        data-hora="02:00 PM"
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="indicador-hora" aria-hidden="true"></span>
+                        02:00 PM
+                    </button>
+
+                    <button
+                        type="button"
+                        class="opcion-hora no-disponible"
+                        data-hora="02:45 PM"
+                        aria-pressed="false"
+                        disabled
+                    >
+                        <span class="indicador-hora" aria-hidden="true"></span>
+                        <s>02:45 PM</s>
+                        <span class="texto-ocupado">Ocupado</span>
+                    </button>
+                </div>
+
+                <div class="ayuda-horarios">
+                    <span aria-hidden="true">ⓘ</span>
+
+                    <p>
+                        Selecciona un turno disponible para continuar con
+                        la confirmación.
+                    </p>
+                </div>
+            </article>
+
+            <!-- Acciones de la segunda pantalla -->
+            <div class="acciones-horarios">
+                <button
+                    type="button"
+                    id="btn-cancelar-seleccion"
+                    class="boton boton-secundario"
+                >
+                    Volver
+                </button>
+
+                <button
+                    type="button"
+                    id="btn-continuar-horario"
+                    class="boton boton-principal"
+                    disabled
+                >
+                    Continuar
+                    <span aria-hidden="true">→</span>
+                </button>
+            </div>
+
+            <p class="nota-prototipo">
+                MediConnect · Demostración académica.
+                Los horarios mostrados son ficticios.
+            </p>
+        </section>
+
+        <!-- Pantalla 3: Resumen del reagendamiento -->
+        <section id="pantalla-resumen" class="pantalla-reprogramacion" hidden>
+            <div class="contenedor-resumen">
+                <header class="resumen-encabezado">
+                    <h2>RESUMEN DE REAGENDAMIENTO</h2>
+                    <span class="estado-reagendamiento">
+                        <span class="estado-punto"></span>
+                        Pendiente de confirmación
+                    </span>
+                </header>
+
+                <div class="resumen-datos">
+                    <div class="dato-resumen">
+                        <span class="dato-etiqueta">ESPECIALISTA</span>
+                        <strong>Dr. Alejandro Ramos</strong>
+                        <span>Cardiología preventiva y clínica</span>
+                    </div>
+
+                    <div class="dato-resumen">
+                        <span class="dato-etiqueta">UBICACIÓN / ESPACIO</span>
+                        <strong>Consultorio 304 / Sala Virtual</strong>
+                        <span>Sede Central - Piso 3</span>
+                    </div>
+
+                    <div class="dato-resumen">
+                        <span class="dato-etiqueta">FECHA Y HORA</span>
+                        <strong id="resumen-fecha">Fecha seleccionada</strong>
+                        <strong id="resumen-hora">Hora seleccionada</strong>
+                    </div>
+
+                    <div class="dato-resumen">
+                        <span class="dato-etiqueta">PACIENTE TITULAR</span>
+                        <strong>Carlos Mendoza</strong>
+                    </div>
+                </div>
+
+                <fieldset class="modalidad-resumen">
+                    <legend>Modalidad de consulta</legend>
+
+                    <label class="opcion-modalidad">
+                        <span class="modalidad-icono" aria-hidden="true">●</span>
+                        <span>Presencial</span>
+                        <span class="modalidad-detalle">En consultorio</span>
+                    </label>
+                </fieldset>
+
+                <div class="acciones-resumen">
+                    <button
+                        type="button"
+                        id="btn-volver-horarios"
+                        class="btn-secundario">
+                        Volver a horarios
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btn-confirmar-reagendamiento"
+                        class="btn-principal">
+                        Confirmar
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                    <p class="nota-confirmacion">
+                        Al confirmar, recibirás las indicaciones previas por correo electrónico.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pantalla 4: Reagendamiento confirmado -->
+        <section id="pantalla-confirmacion" class="pantalla-reprogramacion" hidden>
+            <div class="tarjeta-confirmacion">
+                <div class="icono-confirmacion" aria-hidden="true">✓</div>
+
+                <h2>¡Cita reagendada con éxito!</h2>
+
+                <p>
+                    Tu nueva cita médica ha sido confirmada correctamente.
+                    Hemos actualizado los datos de tu cita.
+                </p>
+
+                <div class="confirmacion-detalle">
+                    <span>Especialista</span>
+                    <strong>Dr. Alejandro Ramos</strong>
+
+                    <span>Fecha</span>
+                    <strong id="confirmacion-fecha">Fecha seleccionada</strong>
+
+                    <span>Hora</span>
+                    <strong id="confirmacion-hora">Hora seleccionada</strong>
+                </div>
+
+                <p class="nota-correo">
+                    Recibirás las indicaciones previas en tu correo electrónico.
+                </p>
+
+                <button
+                    type="button"
+                    id="btn-finalizar-reagendamiento"
+                    class="btn-principal">
+                    Volver a mis citas
+                </button>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie-pagina">
+        <div class="contenedor">
+            <p>
+                © 2025 MediConnect · Prototipo académico de gestión de citas.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -17,6 +17,12 @@ const usuarios = [
         rol: "doctor"
     },
     {
+        nombre: "Carlos Mendoza",
+        correo: "carlos.mendoza@mediconnect.local",
+        contrasena: "Carlos123!",
+        rol: "paciente-reagendamiento"
+    },
+    {
         nombre: "Lizbeth Shakira Pacha Chilig",
         correo: "lizbeth.pacha@mediconnect.local",
         contrasena: "Lizbeth123!"
@@ -69,12 +75,26 @@ formulario.addEventListener("submit", function (evento) {
             usuarioEncontrado.nombre
         );
 
-        // Redirigir según el rol del usuario.
-        if (usuarioEncontrado.rol === "doctor") {
-            window.location.href = "doctor.html";
-        } else {
-            window.location.href = "index.html";
-        }
+      
+/* Redirigir según el rol del usuario. */
+if (usuarioEncontrado.rol === "doctor") {
+
+    window.location.href = "doctor.html";
+
+} else if (
+    usuarioEncontrado.rol === "paciente-reagendamiento"
+) {
+
+    // Carlos entra directamente al flujo de reagendamiento.
+    window.location.href = "reprogramacion.html";
+
+} else {
+
+    // Los demás pacientes mantienen su acceso habitual.
+    window.location.href = "index.html";
+
+}
+
 
     } else {
 
