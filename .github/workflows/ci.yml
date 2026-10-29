@@ -1,0 +1,45 @@
+
+name: CI MediConnect
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - feat/change-request-reprogramacion-emergencias
+
+jobs:
+  validar-javascript:
+    name: Validar sintaxis de JavaScript
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Comprobar sintaxis de JavaScript
+        shell: bash
+        run: |
+          set -e
+
+          mapfile -t archivos_js < <(find frontend -type f -name '*.js' -print)
+
+          if [ "${#archivos_js[@]}" -eq 0 ]; then
+            echo "No se encontraron archivos JavaScript."
+            exit 1
+          fi
+
+          for archivo in "${archivos_js[@]}"; do
+            echo "Validando: $archivo"
+            node --check "$archivo"
+          done
+
+          echo "Todas las comprobaciones de sintaxis finalizaron correctamente."
+

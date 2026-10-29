@@ -11,6 +11,18 @@ const usuarios = [
         contrasena: "Edwin123!"
     },
     {
+        nombre: "Dr. Daniel Morales",
+        correo: "daniel.morales@mediconnect.local",
+        contrasena: "Doctor123!",
+        rol: "doctor"
+    },
+    {
+        nombre: "Carlos Mendoza",
+        correo: "carlos.mendoza@mediconnect.local",
+        contrasena: "Carlos123!",
+        rol: "paciente-reagendamiento"
+    },
+    {
         nombre: "Lizbeth Shakira Pacha Chilig",
         correo: "lizbeth.pacha@mediconnect.local",
         contrasena: "Lizbeth123!"
@@ -41,7 +53,6 @@ const mensaje = document.getElementById("mensaje-login");
 /* ========================================
    VALIDACIÓN DEL INICIO DE SESIÓN
    ======================================== */
-
 formulario.addEventListener("submit", function (evento) {
 
     evento.preventDefault();
@@ -64,8 +75,26 @@ formulario.addEventListener("submit", function (evento) {
             usuarioEncontrado.nombre
         );
 
-        // Acceder a la pantalla principal.
-        window.location.href = "index.html";
+      
+/* Redirigir según el rol del usuario. */
+if (usuarioEncontrado.rol === "doctor") {
+
+    window.location.href = "doctor.html";
+
+} else if (
+    usuarioEncontrado.rol === "paciente-reagendamiento"
+) {
+
+    // Carlos entra directamente al flujo de reagendamiento.
+    window.location.href = "reprogramacion.html";
+
+} else {
+
+    // Los demás pacientes mantienen su acceso habitual.
+    window.location.href = "index.html";
+
+}
+
 
     } else {
 
@@ -78,8 +107,6 @@ formulario.addEventListener("submit", function (evento) {
     }
 
 });
-
-
 /* ========================================
    OCULTAR EL ERROR AL VOLVER A ESCRIBIR
    ======================================== */

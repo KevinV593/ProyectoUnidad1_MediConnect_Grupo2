@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel del médico | MediConnect</title>
+
+    <link rel="stylesheet" href="css/doctor.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="js/doctor.js" defer></script>
+</head>
+<body>
+    <aside class="menu-lateral">
+        <a href="doctor.html" class="marca">
+            <span class="simbolo-salud">+</span>
+            <span>MediConnect</span>
+        </a>
+
+        <nav class="navegacion" aria-label="Navegación principal">
+            <a href="doctor.html" class="enlace-menu activo">Mis citas</a>
+            <a href="#agenda" class="enlace-menu">Agenda</a>
+            <a href="#informacion" class="enlace-menu">Mi información</a>
+        </nav>
+
+        <a href="login.html" class="enlace-cerrar">Cerrar sesión</a>
+    </aside>
+
+    <main class="contenido">
+        <header class="encabezado-pagina">
+            <div>
+                <p class="texto-secundario">Panel del profesional</p>
+                <h1>Mis citas</h1>
+                <p>Administra tus turnos y gestiona las situaciones imprevistas.</p>
+            </div>
+
+            <div class="perfil-medico">
+                <div class="avatar-medico">DM</div>
+                <div>
+                    <strong>Dr. Daniel Morales</strong>
+                    <span>Médico</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="resumen">
+            <div class="tarjeta-resumen">
+                <span class="resumen-etiqueta">Citas programadas</span>
+                <strong>3</strong>
+            </div>
+            <div class="tarjeta-resumen">
+                <span class="resumen-etiqueta">Fecha</span>
+                <strong>12 de octubre</strong>
+            </div>
+            <div class="tarjeta-resumen">
+                <span class="resumen-etiqueta">Estado de agenda</span>
+                <strong class="estado-agenda">Activa</strong>
+            </div>
+        </section>
+
+        <section class="seccion-citas" id="agenda">
+            <div class="titulo-seccion">
+                <div>
+                    <h2>Agenda del día</h2>
+                    <p>Consulta las citas registradas para esta jornada.</p>
+                </div>
+                <span class="fecha-agenda">Lunes, 12 de octubre</span>
+            </div>
+
+            <div class="lista-citas">
+                <article class="tarjeta-cita" id="cita-carlos">
+                    <div class="encabezado-cita">
+                        <div class="icono-cita">▦</div>
+                        <div class="datos-horario">
+                            <h3>10:00 AM</h3>
+                            <span class="texto-secundario">Duración: 30 minutos</span>
+                        </div>
+                        <span class="etiqueta modalidad">Presencial</span>
+                        <span class="etiqueta estado-cita" id="estado-carlos">Activa</span>
+                    </div>
+
+                    <div class="datos-paciente">
+                        <div class="avatar-paciente">CM</div>
+                        <div>
+                            <h4>Carlos Mendoza</h4>
+                            <p>Consulta de medicina general</p>
+                            <p>Consultorio 304</p>
+                        </div>
+                    </div>
+
+                    <div class="mensaje-estado" id="mensaje-carlos">
+                        <span class="punto-estado"></span>
+                        <span>La cita está confirmada y lista para atender.</span>
+                    </div>
+
+                    <div class="acciones-cita" id="acciones-carlos">
+                        <button class="boton boton-principal" type="button" disabled>
+                            Atender
+                        </button>
+                        <button class="boton boton-secundario" id="boton-cancelar-carlos" type="button">
+                            Cancelar
+                        </button>
+                    </div>
+                </article>
+
+                <article class="tarjeta-cita">
+                    <div class="encabezado-cita">
+                        <div class="icono-cita">▦</div>
+                        <div class="datos-horario">
+                            <h3>11:00 AM</h3>
+                            <span class="texto-secundario">Duración: 30 minutos</span>
+                        </div>
+                        <span class="etiqueta modalidad">Virtual</span>
+                        <span class="etiqueta estado-cita">Activa</span>
+                    </div>
+
+                    <div class="datos-paciente">
+                        <div class="avatar-paciente avatar-verde">LP</div>
+                        <div>
+                            <h4>Laura Pérez</h4>
+                            <p>Consulta de seguimiento</p>
+                            <p>Videoconsulta</p>
+                        </div>
+                    </div>
+
+                    <div class="mensaje-estado">
+                        <span class="punto-estado"></span>
+                        <span>La cita está confirmada.</span>
+                    </div>
+
+                    <div class="acciones-cita">
+                        <button class="boton boton-principal" type="button" disabled>Atender</button>
+                        <button class="boton boton-secundario" type="button" disabled>Cancelar</button>
+                    </div>
+                </article>
+
+                <article class="tarjeta-cita">
+                    <div class="encabezado-cita">
+                        <div class="icono-cita">▦</div>
+                        <div class="datos-horario">
+                            <h3>12:00 PM</h3>
+                            <span class="texto-secundario">Duración: 30 minutos</span>
+                        </div>
+                        <span class="etiqueta modalidad">Presencial</span>
+                        <span class="etiqueta estado-cita">Activa</span>
+                    </div>
+
+                    <div class="datos-paciente">
+                        <div class="avatar-paciente avatar-morado">AG</div>
+                        <div>
+                            <h4>Ana García</h4>
+                            <p>Consulta general</p>
+                            <p>Consultorio 304</p>
+                        </div>
+                    </div>
+
+                    <div class="mensaje-estado">
+                        <span class="punto-estado"></span>
+                        <span>La cita está confirmada.</span>
+                    </div>
+
+                    <div class="acciones-cita">
+                        <button class="boton boton-principal" type="button" disabled>Atender</button>
+                        <button class="boton boton-secundario" type="button" disabled>Cancelar</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="aviso-global" id="aviso-global" role="status" aria-live="polite" hidden>
+            <span class="icono-aviso">✓</span>
+            <div>
+                <strong id="titulo-aviso">Operación confirmada</strong>
+                <p id="texto-aviso"></p>
+            </div>
+            <button type="button" id="cerrar-aviso" aria-label="Cerrar aviso">×</button>
+        </div>
+
+        <footer class="pie-pagina">
+            MediConnect · Prototipo académico de gestión de citas
+        </footer>
+    </main>
+
+    <div class="fondo-modal" id="fondo-modal" hidden>
+        <section
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-modal"
+            aria-describedby="descripcion-modal"
+        >
+            <header class="encabezado-modal">
+                <div class="icono-alerta">!</div>
+                <button class="cerrar-modal" id="cerrar-modal" type="button" aria-label="Cerrar ventana">×</button>
+            </header>
+
+            <h2 id="titulo-modal">¿Confirmar cancelación de cita?</h2>
+
+            <p class="resumen-modal" id="descripcion-modal">
+                Carlos Mendoza · Lunes 12 de octubre, 10:00 AM · Presencial (Consultorio 304)
+            </p>
+
+            <label class="etiqueta-campo" for="tipo-cancelacion">TIPO DE CANCELACIÓN</label>
+            <select id="tipo-cancelacion" class="selector-modal">
+                <option value="Emergencia" selected>Emergencia</option>
+                <option value="Indisponibilidad">Indisponibilidad del médico</option>
+            </select>
+
+            <div class="nota-modal">
+                <span class="icono-nota">i</span>
+                <p>Al confirmar, la cita se marcará para reprogramación y se mostrará una notificación simulada para el paciente.</p>
+            </div>
+
+            <p class="error-modal" id="error-modal" hidden>
+                Selecciona un motivo para continuar.
+            </p>
+
+            <footer class="acciones-modal">
+                <button class="boton boton-secundario" id="boton-volver" type="button">
+                    Volver
+                </button>
+                <button class="boton boton-confirmar" id="boton-confirmar" type="button">
+                    Confirmar
+                </button>
+            </footer>
+        </section>
+    </div>
+</body>
+</html>
